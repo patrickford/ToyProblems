@@ -1,8 +1,7 @@
-var currentRun = 0;
-
 function longestSequence(myString) {
   var result = [0,0], 
       longestRun = 0,
+      currentRun = 0,
       start = 0,
       end = 0;
 
@@ -24,9 +23,4 @@ function longestSequence(myString) {
     }
   }
   return result;
-}
-
-function secondFunc(number) {
-  var result = currentRun;
-
 }
