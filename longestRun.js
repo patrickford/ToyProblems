@@ -16,10 +16,9 @@ var longestRun = function (str) {
                 result[0] = start;
                 result[1] = i;
                 longestRun = currentRun;         
-            } else {
-              start = i;
-              currentRun = 1;
-            }
+            } 
+            start = i;
+            currentRun = 1;
         }
         previousChar = currentChar;
     }

@@ -20,7 +20,6 @@
 function characterFrequency1 (myString) {
   var result = [],
       charCounts = {},
-      charPair = [];
 
   for (var i = 0; i < myString.length; i++) {
     if (charCounts[myString[i]]) {
@@ -31,9 +30,9 @@ function characterFrequency1 (myString) {
   }
 
   for (key in charCounts) {
+    var charPair = [];
     charPair[0] = key;
     charPair[1] = charCounts[key];
-    console.log(charPair);
     result.push(charPair);
   }
 
@@ -58,7 +57,7 @@ function characterFrequency2 = (string) {
     charPair[1] = charCounts[key];
     result.push(charPair);
   }
-  console.log(result);
+  
   return result;
 };
 
