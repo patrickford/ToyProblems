@@ -1,11 +1,25 @@
-function isPalindrome(string) {
-  /* TODO: Strip spaces and punctuation before analyzing string */
-  string = string.replace(/[^\w\s]|_/g, "")
-                 .replace(/\s+/g, " ");
-  for (var i = 0; i < Math.floor(string.length/2); i++) {
-    if (string[i] != string[string.length-1-i]) {
+str = "abcdcba";
+
+function isPalindrome(str) {
+  return str === str.split('').reverse().join('');
+}
+
+function isPalindrome2(str) {
+  var result = true;
+  for (var i = 0; i < Math.floor(str.length / 2); i++) {
+    if (str[i] != str[str.length - 1 -i]) {
       return false;
     }
   }
-  return true;
+  return result;
+}
+
+function isPalindrome2(str) {
+  if (str.slice(0,1) != str.slice(-1)) {
+    return false;
+  }
+  if (str.length == 0 || str.length == 1) {
+    return true;
+  }
+  return isPalindrome2(str.slice(1,-1))
 }
