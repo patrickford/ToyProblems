@@ -1,6 +1,27 @@
-myArray = [2,3,4,5,6];
+myArray = [1,2,3,4,5];
 
-myObj = {one: 1, two: 2, three: 3, four: 4, five: 5, six: 6}
+myObj = {one: 1, two: 2, three: 3, four: 4, five: 5}
+
+// Utility functions
+function add(x, y) {
+  return x + y;
+}
+
+function mult(x, y) {
+  return x * y;
+}
+
+function addTen(x) {
+  return x + 10;
+}
+
+function even(x) {
+  return x % 2 == 0;
+}
+
+function odd(x) {
+  return x % 2 != 0;
+}
 
 function each(collection, callback) {
   if (Array.isArray(collection)) {
@@ -45,6 +66,22 @@ function reduce(collection, callback, initial) {
     } 
   });
   return accumulator; 
+}
+
+// Refactored reduce function with ternary operator
+function reduce(collection, callback, initial) { 
+  var accumulator = initial;
+  each(collection, function (element) { 
+    accumulator = accumulator === undefined ? element : callback(accumulator, element);
+  });
+  return accumulator; 
+}
+
+// Contains using reduce
+function contains(collection, target) {
+  return reduce(collection, function(accumulator, element) {
+    return accumulator || accumulator === target;
+  }, false);
 }
 
 function contains(collection, target) {

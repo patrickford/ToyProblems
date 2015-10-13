@@ -31,7 +31,7 @@ function shuffle(cards) {
 function dealHand(deck) {
   var hand = [];
   shuffle(deck);
-  // hand = two random cards from deck
+  // hand = two cards from top of deck
   for(var i = 0; i < 2; i++) {
     hand.push(deck.shift());
   }
