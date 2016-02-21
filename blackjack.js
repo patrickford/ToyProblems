@@ -41,7 +41,7 @@ function dealHand(deck) {
 function dealRound(players, deck) {
   shuffle(deck);
 
-  for(var i =0; i < players.length; i++) {
+  for(var i = 0; i < players.length; i++) {
     table.push
   }
   // order is: player, player, player..., then dealer
