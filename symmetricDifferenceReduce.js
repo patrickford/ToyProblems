@@ -16,13 +16,10 @@ function symmetricDifference() {
     for (var k = 0; k < arrA.length; k++) {
       if (arrB.indexOf(arrA[k]) == -1) {
         union.push(arrA[k]);
+      } else {
+        arrB = arrB.slice(0,arrB.indexOf(arrA[k])).concat(arrB.slice(arrB.indexOf(arrA[k])+1));
       }
     }
-    for (var l = 0; l < arrB.length; l++) {
-      if (arrA.indexOf(arrB[l]) == -1) {
-        union.push(arrB[l]);
-      }
-    } 
-    return union;        
+    return union.concat(arrB);      
   });
 }
