@@ -1,9 +1,12 @@
-str = "abcdcba";
+str1 = "abcdcba";
+str2 = "patrick";
 
+// Using string and array methods
 function isPalindrome(str) {
   return str === str.split('').reverse().join('');
 }
 
+// Using iteration
 function isPalindrome2(str) {
   var result = true;
   for (var i = 0; i < Math.floor(str.length / 2); i++) {
@@ -14,12 +17,13 @@ function isPalindrome2(str) {
   return result;
 }
 
-function isPalindrome2(str) {
+// Recursion
+function isPalindrome3(str) {
   if (str.slice(0,1) != str.slice(-1)) {
     return false;
   }
   if (str.length == 0 || str.length == 1) {
     return true;
   }
-  return isPalindrome2(str.slice(1,-1))
+  return isPalindrome3(str.slice(1,-1))
 }
